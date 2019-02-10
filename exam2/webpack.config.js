@@ -23,7 +23,7 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 options: {
-                    presets: [['es2015', {modules: false}], 'react'],
+                    presets: [['es2015', {modules: false}], 'stage-0', 'react'],
                     cacheDirectory: true,
                     plugins: ['react-hot-loader/babel']      
                 },
