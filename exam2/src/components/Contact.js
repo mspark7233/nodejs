@@ -58,6 +58,9 @@ export default class Contract extends React.Component {
     }
 
     handleRemove() {
+        if(this.state.selectedKey < 0) {
+            return;
+        }
         this.setState({
             contactData: update(this.state.contactData, 
                 { 
@@ -112,6 +115,8 @@ export default class Contract extends React.Component {
                 <ContactDetails 
                     isSelected={this.state.selectedKey != -1} 
                     contact={this.state.contactData[this.state.selectedKey]}
+                    onRemove={this.handleRemove}
+                    onEdit={this.handleEdit}
                 />
                 <ContactCreate 
                     onCreate={this.handleCreate}
