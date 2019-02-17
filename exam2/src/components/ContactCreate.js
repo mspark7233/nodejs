@@ -29,7 +29,9 @@ export default class ContactCreate extends React.Component {
         this.setState({
             name: '',
             phone: ''
-        })
+        });
+
+        this.nameInput.focus();
     }
 
     handleKeyPress(e) {
@@ -49,6 +51,8 @@ export default class ContactCreate extends React.Component {
                         placeholder="name"
                         value={this.state.name}
                         onChange={this.handleChange}
+                        /* rander, construct 함수에서는 ref 사용 못 함 */
+                        ref={(ref) => { this.nameInput = ref; }}
                     />
                     <input
                         type="text"
